@@ -18,6 +18,7 @@ function Ingredients(props){
                 value={pizzaIngredients.indexOf(ing)} 
                 id={ing} name="ingredients" 
                 checked = {pizza.ingredients[pizzaIngredients.indexOf(ing)]}
+                className="ing-checkbox"
                 />
                 {ing}
                 <br/>

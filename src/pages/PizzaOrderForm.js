@@ -168,7 +168,7 @@ function PizzaOrderForm(props){
             <label>
                 <b><span className="name-note">İsim:</span><span className="asterisk name-note" hidden={!nameNeeded}>   *</span></b>
                 <br/>
-                <input type = "text" id="name-input" onChange={onInputChange} name="name" />
+                <input type = "text" id="name-input" onChange={onInputChange} name="name" className="input-bar"/>
             </label>
 
             <br/>
@@ -178,7 +178,7 @@ function PizzaOrderForm(props){
                 <b><span className="name-note" >Sipariş Notu:</span></b>
                 <br/>
 
-                <input type="text" id="special-text" name="note" onChange={onInputChange} />
+                <input type="text" id="special-text" name="note" onChange={onInputChange} className="input-bar"/>
             </label>
 
             <hr/>
