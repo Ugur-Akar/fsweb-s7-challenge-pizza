@@ -1,0 +1,12 @@
+.header {
+    background-color: #CE2829;
+    align-items: center;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.header > img {
+    margin: auto;
+    align-items: center;
+}

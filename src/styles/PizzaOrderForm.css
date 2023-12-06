@@ -1,0 +1,95 @@
+.flex-container {
+    display: flex;
+}
+
+.order-container {
+    margin:auto;
+    width: 35%;
+    display: block;
+    min-width: 600px;
+}
+
+.selection-form {
+    margin-right: auto;
+}
+
+.ingredient-select {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ingredient-select > label{
+    width: 30%;
+}
+
+p {
+    font-size: unset;
+    color: black;
+}
+
+.pizza-info {
+    padding-bottom: 5%;
+}
+
+.asterisk {
+    color: red;
+}
+
+.name-note {
+    font-size: 30px;
+}
+
+.count-div{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    border: 1px solid #29292940;
+    border-radius: 10px;
+}
+
+.count-div > button{
+    background-color: #FDC913;
+    height: 40px;
+    width: 40px;
+    border-radius: 9px;
+    border: 0px;
+}
+
+.count-div > span{
+    font-size: 20px;
+    margin: 0px 10px 0px 10px;
+}
+
+.order-sum {
+    display: block;
+    margin: auto;
+    margin-right: 0px;
+    min-width: 400px;
+    
+    border: 1px solid #29292940;
+    border-radius: 10px;
+    
+}
+.order-sum > h2 {
+    margin: auto;
+    margin-left: 4rem;
+    margin-top: 2rem;
+}
+
+.order-sum > .price-string {
+    margin-left: 4rem;
+}
+
+.order-sum > .price {
+    margin-right: 20px;
+    margin-left: 12rem;
+    text-align: right;
+}
+
+#order-button {
+    background-color: #FDC913;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    border: none;
+    font-size: 20px;
+}

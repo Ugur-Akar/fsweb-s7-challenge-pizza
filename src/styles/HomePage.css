@@ -1,0 +1,31 @@
+.flex-container {
+    display: flex;
+}
+
+.home-page {
+    background-image: url("./mvp-banner.png");
+    background-size:auto;
+    text-align: center;
+    height: 1080px;
+}
+
+.title-logo {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.home-page-p {
+    color: white;
+    font-size: 50px;
+    margin: 5px;
+}
+
+a {
+    background-color: #FDC913;
+    color: black;
+    font-size: 30px;
+    padding: 10px 60px 10px 60px;
+    border-radius: 40px;
+    text-decoration: none;
+}
