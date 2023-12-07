@@ -20,6 +20,17 @@ function PizzaOrderForm(props){
         "Ananas", "Kabak"
     ];
     const ingredientCost = 5;
+    const sizeCosts = [
+        {value:"Küçük", cost:0},
+        {value:"Orta", cost:10},
+        {value:"Büyük", cost:20}
+    ];
+    const doughCosts = [
+        {value:"İnce", cost:0},
+        {value:"Orta", cost:10},
+        {value:"Kalın", cost:20}
+    ];
+
     const successPath = props.successPath;
 
     let initArr = [];
@@ -33,13 +44,14 @@ function PizzaOrderForm(props){
         pizzaName: pizzaName,
         price: pizzaPrice,
         description: pizzaDescription,
-        ingredients:[...initArr],
+        ingredients: [...initArr],
         ingredientCount: 0,
-        ingredientList:[],
-        size:"",
-        dough:"",
-        name:"",
-        note:"",
+        ingredientList: [],
+        size: "",
+        dough: "",
+        name: "",
+        note: "",
+        totalPrice: 0
     }
     
     const [nameNeeded, setNameNeeded] = useState(true);
@@ -60,7 +72,8 @@ function PizzaOrderForm(props){
         if(isValid){
             axios.post("https://reqres.in/api/orders", pizza)
                 .then(r => {
-                    console.log(r.data);
+                    let obj = {...r.data, orderAmount: e.target.value};
+                    console.log(obj);
                     history.push(successPath);
                 })
                 .catch(e => {
@@ -146,6 +159,10 @@ function PizzaOrderForm(props){
         }
     }, [pizza]);
 
+    const updateTotalPrice = (sum) => {
+        setPizza({...pizza, totalPrice:sum});
+    };
+
 
     return (
         <form className="order-container" id = "pizza-form">
@@ -185,7 +202,12 @@ function PizzaOrderForm(props){
             <br/>
             <br/>
 
-            <Submit onSubmitHandler={onSubmitHandler} isValid={isValid} pizza={pizza} pizzaPrice={pizzaPrice} ingredientCost = {ingredientCost} />
+            <Submit 
+                onSubmitHandler={onSubmitHandler} isValid={isValid} 
+                pizza={pizza} pizzaPrice={pizzaPrice} 
+                ingredientCost = {ingredientCost} sizeCosts={sizeCosts} doughCosts={doughCosts} 
+                updateTotalPrice={updateTotalPrice}
+            />
 
         </form>
     )

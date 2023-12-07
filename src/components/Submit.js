@@ -7,25 +7,30 @@ function Submit(props){
     const isValid = props.isValid;
     const pizza = props.pizza;
     const ingredientCost = props.ingredientCost;
+    const sizeCosts = [...props.sizeCosts];
+    const doughCosts = [...props.doughCosts];
 
     const [orderAmount, setOrderAmount] = useState(minOrderAmount);
     const [price , setPrice] = useState(pizza.price);
-    const [totalPrice, setTotalPrice] = useState(pizza.price);
     const [ingredientPrice, setIP] = useState(0);
+    
+    useEffect(() => {
+        let num = ingredientCost * pizza.ingredientCount;
 
+        const sc = sizeCosts.find((element) => element.value === pizza.size);
+        sc !== undefined ? num += sc.cost : num += 0;
+        const dc = doughCosts.find((element) => element.value === pizza.dough);
+        dc !== undefined ? num += dc.cost : num += 0;
+        setIP(num);
+        
+        num += pizza.price;
+        setPrice(num);
+
+    }, [pizza]);
 
     useEffect(() => {
         updateTP();
     }, [orderAmount]);
-    
-    useEffect(() => {
-        let num = pizza.price;
-        num += ingredientCost * pizza.ingredientCount;
-        setPrice(num);
-
-        num = ingredientCost * pizza.ingredientCount;
-        setIP(num);
-    }, [pizza]);
 
     useEffect(() => {
         updateTP();
@@ -34,7 +39,7 @@ function Submit(props){
     function updateTP(){
         let num = price;
         num *= orderAmount;
-        setTotalPrice(num);
+        props.updateTotalPrice(num);
     }
 
     const onOrderAmountClick = (e) => {
@@ -70,13 +75,13 @@ function Submit(props){
                 <span className="price" style={{color: "rgb(41 41 41 / 70%)"}}>{ingredientPrice}</span>
                 <br/>
                 <span className="price-string" style={{color: "#CE2829"}}>Toplam</span>
-                <span className="price" style={{color: "#CE2829"}}>{totalPrice}</span>
+                <span className="price" style={{color: "#CE2829"}}>{pizza.totalPrice}</span>
 
                 <br/>
                 <br/>
 
                 <div>
-                    <button disabled={!isValid} id="order-button" onClick={onSubmitHandler} ><b>SİPARİŞ VER</b></button>
+                    <button disabled={!isValid} id="order-button" onClick={onSubmitHandler} value={orderAmount}> SİPARİŞ VER </button>
                 </div>
                 
             </div>

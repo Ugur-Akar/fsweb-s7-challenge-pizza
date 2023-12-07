@@ -6,7 +6,7 @@
     background-image: url("./mvp-banner.png");
     background-size:auto;
     text-align: center;
-    height: 1080px;
+    height: 100vh;
 }
 
 .title-logo {

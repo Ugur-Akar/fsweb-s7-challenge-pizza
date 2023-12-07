@@ -5,7 +5,6 @@ import "../styles/HomePage.css";
 function HomePage(){
     const titlePath = "../Assets/logo.svg";
 
-
     return(
         <div className="home-page">
             <img src={titlePath} alt="Teknolojik Yemekler" className="title-logo" />
@@ -21,7 +20,6 @@ function HomePage(){
                 ACIKTIM
             </NavLink>
         </div>
-        
     )
 }
 
