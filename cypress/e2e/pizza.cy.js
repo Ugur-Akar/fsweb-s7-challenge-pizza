@@ -2,6 +2,7 @@
 const homeURL = "localhost:3000/";
 const orderURL = "pizza";
 const successURL = "success";
+const tries = 5;
 
 describe("Pizza Order Test", () => {
     beforeEach(() => {
@@ -38,8 +39,8 @@ describe("Total Test", () => {
 
         cy.get('#order-button').should("have.attr", "disabled");//button first control
 
-        randomIngredients(5);//random ingredient seçiliyor
-        
+        randomIngredients(tries);//random ingredient seçiliyor
+        if(tries )
         cy.get('#order-button').should("not.have.attr", "disabled");//button second control
 
         cy.get('#order-button').click();

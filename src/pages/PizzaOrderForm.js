@@ -36,9 +36,7 @@ function PizzaOrderForm(props){
     let initArr = [];
     let history = useHistory();
 
-    pizzaIngredients.forEach(ingredient => {
-        initArr.push(false);
-    });
+    initArr = pizzaIngredients.map((ing) => false);
 
     const initPizza = {
         pizzaName: pizzaName,
