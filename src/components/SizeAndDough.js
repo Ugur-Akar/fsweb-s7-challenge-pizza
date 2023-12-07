@@ -40,6 +40,7 @@ function SizeAndDough(props){
                         checked = {pizza.size === "Küçük"}
                         id = "küçük-boyut"
                         name = "size"
+                        data-cy="radio"
                     />
                     <span>   Küçük</span>
                     <br/>
@@ -70,9 +71,9 @@ function SizeAndDough(props){
             </div>
 
             <div className="selection-form">
-                <label id = "dough-select">
+                <label id = "dough-select" data-cy="select-box">
                     <b>{hamurText}<span className="asterisk" hidden={!doughNeeded}> *</span></b><br />
-                    <Select options={options} onChange={onInputChange} isSearchable = {false} placeholder="Hamur Seçiniz" />
+                    <Select options={options} onChange={onInputChange} isSearchable = {false} placeholder="Hamur Seçiniz" classNamePrefix={"react-select"}/>
                 </label>
             </div>
         </div>

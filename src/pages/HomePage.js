@@ -17,7 +17,7 @@ function HomePage(){
             <br />
             <br />
 
-            <NavLink to = "/pizza" id="order-pizza">
+            <NavLink to = "/pizza" id="order-pizza" data-cy="home-button">
                 ACIKTIM
             </NavLink>
         </div>

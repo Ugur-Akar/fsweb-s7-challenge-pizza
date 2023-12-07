@@ -76,7 +76,7 @@ function Submit(props){
                 <br/>
 
                 <div>
-                    <button disabled={!isValid} id="order-button" onClick={onSubmitHandler}><b>SİPARİŞ VER</b></button>
+                    <button disabled={!isValid} id="order-button" onClick={onSubmitHandler} ><b>SİPARİŞ VER</b></button>
                 </div>
                 
             </div>
